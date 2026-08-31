@@ -87,6 +87,18 @@
 /* Nasconde il vecchio header mobile Elementor (barra rossa in cima): sostituito dal nostro */
 .elementor-element-61b6fce { display: none !important; }
 
+/* Home: spazio in cima all'hero, cosi il logo non finisce sotto l'header flottante */
+@media (max-width: 1024px) {
+  .elementor-element-49b8b301 { padding-top: 104px !important; }
+}
+
+/* Bottone hero "Iscrizioni 2025/2026": centrato e non a tutta larghezza */
+.elementor-element-51628560 { text-align: center !important; }
+.elementor-element-51628560 .elementor-button {
+  width: auto !important; max-width: 340px;
+  margin-left: auto !important; margin-right: auto !important;
+}
+
 /* ------------------------- Mobile / tablet ------------------------- */
 @media (max-width: 1024px) {
   .vl-logo img { height: 54px; }
