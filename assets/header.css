@@ -55,9 +55,11 @@
 .vl-social:hover { transform: translateY(-2px); filter: brightness(1.05); }
 .vl-social--fb { background: #1877f2; }
 .vl-social--ig { background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
-.vl-social svg { width: 19px; height: 19px; fill: currentColor; }
+/* Override del colore grigio ereditato da Elementor: icone e testo devono essere bianchi */
+.vl-header .vl-social { color: #fff !important; }
+.vl-social svg { width: 19px; height: 19px; fill: #fff !important; }
 .vl-cta {
-  background: var(--vl-red); color: #fff;
+  background: var(--vl-red); color: #fff !important;
   padding: 13px 24px; border-radius: 50px;
   font: 700 15px/1 "Inter", system-ui, sans-serif;
   text-decoration: none; white-space: nowrap;
