@@ -8,6 +8,16 @@
       }
     });
   }
-  if (document.readyState !== 'loading') setTimeout(fillCounters, 1500);
-  else document.addEventListener('DOMContentLoaded', function () { setTimeout(fillCounters, 1500); });
+  // Let the contact form submit natively to FormSubmit instead of Elementor's WordPress AJAX.
+  function freeContactForm() {
+    var form = document.querySelector('form.elementor-form[action*="formsubmit"]');
+    if (!form) return;
+    // Capture-phase listener runs first and stops Elementor's own submit handler,
+    // leaving the browser's native submit (to the action URL) intact.
+    form.addEventListener('submit', function (e) { e.stopImmediatePropagation(); }, true);
+  }
+
+  function init() { setTimeout(fillCounters, 1500); freeContactForm(); }
+  if (document.readyState !== 'loading') init();
+  else document.addEventListener('DOMContentLoaded', init);
 })();
