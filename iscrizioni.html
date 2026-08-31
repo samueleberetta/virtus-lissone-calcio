@@ -89,6 +89,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 				}
 			</style>
 			  <link rel="stylesheet" href="assets/header.css">
+  <link rel="stylesheet" href="assets/cookie-consent.css">
 </head>
 <body class="wp-singular page-template-default page page-id-208 wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-kit-13 elementor-page elementor-page-208">
 
@@ -133,9 +134,12 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 .isc__card .big{font-size:22px;color:var(--yellow);}
 .isc h2{color:var(--yellow);font-size:clamp(20px,4vw,26px);font-weight:800;
   margin:38px 0 16px;text-transform:uppercase;letter-spacing:.4px;}
-.isc p,.isc li{font-size:16.5px;line-height:1.75;color:#fff;}
-.isc ul{margin:0 0 20px;padding-left:22px;}
-.isc li{margin-bottom:12px;}
+.isc p,.isc li{font-size:16.5px;line-height:1.75;color:#fff;text-wrap:pretty;}
+.isc__wrap>p{text-wrap:balance;}
+.isc a{word-break:normal;overflow-wrap:break-word;}
+.isc ul{margin:0 0 20px;padding-left:0;list-style:none;}
+.isc li{position:relative;padding-left:1.5em;margin-bottom:12px;}
+.isc li::before{content:"•";position:absolute;left:.2em;top:0;color:#fff;font-weight:700;}
 .isc a{color:var(--yellow);font-weight:700;text-decoration:underline;text-underline-offset:3px;}
 .isc a:hover{color:#fff;}
 .isc__iban{background:rgba(0,0,0,.18);border-radius:14px;padding:20px 24px;margin:6px 0 26px;}
@@ -143,6 +147,13 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 .isc__iban .lab{color:var(--yellow);font-weight:700;}
 .isc__iban .iban{font-family:ui-monospace,Menlo,monospace;font-size:17px;
   letter-spacing:.5px;word-break:break-all;}
+.isc-copy{display:inline-flex;align-items:center;justify-content:center;
+  vertical-align:middle;margin-left:10px;width:32px;height:32px;padding:0;
+  border:1px solid rgba(255,255,255,.4);border-radius:8px;cursor:pointer;
+  background:rgba(255,255,255,.1);color:#fff;transition:background .15s,border-color .15s,color .15s;}
+.isc-copy:hover{background:rgba(255,255,255,.22);}
+.isc-copy.copied{background:var(--yellow);border-color:var(--yellow);color:var(--red);}
+.isc-copy .feedback{position:absolute;}
 .isc__foot{text-align:center;font-weight:600;color:var(--yellow);
   border-top:1px solid rgba(255,255,255,.25);padding-top:24px;margin-top:10px;}
 </style>
@@ -171,8 +182,8 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 
     <h2>Coordinate bancarie per bonifico</h2>
     <div class="isc__iban">
-      <p><span class="lab">Intestato a:</span> POLISPORTIVA VIRTUS LISSONE ASD</p>
-      <p><span class="lab">IBAN:</span> <span class="iban">IT79S0844032390000000210959</span></p>
+      <p><span class="lab">Intestato a:</span> <span class="cval" id="cp-int">POLISPORTIVA VIRTUS LISSONE ASD</span><button class="isc-copy" type="button" data-copy-target="cp-int" aria-label="Copia intestatario"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></p>
+      <p><span class="lab">IBAN:</span> <span class="iban cval" id="cp-iban">IT79S0844032390000000210959</span><button class="isc-copy" type="button" data-copy-target="cp-iban" aria-label="Copia IBAN"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></p>
       <p><span class="lab">Causale:</span> QUOTA CALCIO NOME COGNOME CATEGORIA</p>
     </div>
 
@@ -285,7 +296,9 @@ var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/virtuslissonecalcio.it\/w
 <script src="assets/39b2c2_frontend.min.js" id="elementor-pro-frontend-js"></script>
 <script src="assets/9e8bda_elements-handlers.min.js" id="pro-elements-handlers-js"></script>
 
-<script src="assets/clone-fixups.js"></script></body>
+<script src="assets/clone-fixups.js"></script><div class="vl-legal-links"><a href="privacy-policy.html">Privacy Policy</a><span class="sep">&middot;</span><a href="cookie-policy.html">Cookie Policy</a><span class="sep">&middot;</span><a href="#" data-cookie-prefs>Preferenze cookie</a></div>
+<script src="assets/cookie-consent.js"></script>
+</body>
 </html>
 
 

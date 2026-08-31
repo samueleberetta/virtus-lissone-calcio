@@ -84,6 +84,8 @@
 
 /* Nasconde eventuali menu Elementor residui (widget "nested menu" fuori dall'header) */
 .e-n-menu, .elementor-menu-toggle { display: none !important; }
+/* Nasconde il vecchio header mobile Elementor (barra rossa in cima): sostituito dal nostro */
+.elementor-element-61b6fce { display: none !important; }
 
 /* ------------------------- Mobile / tablet ------------------------- */
 @media (max-width: 1024px) {

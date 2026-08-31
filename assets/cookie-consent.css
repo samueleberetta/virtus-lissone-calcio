@@ -1,0 +1,40 @@
+/* Cookie consent banner + blocco embed di terze parti — Virtus Lissone */
+.vl-cc { --cc-red:#da0612; --cc-yellow:#f9e813;
+  position:fixed; left:0; right:0; bottom:0; z-index:2000;
+  background:#fff; box-shadow:0 -6px 24px rgba(0,0,0,.22);
+  padding:20px clamp(16px,4vw,40px); display:none;
+  font-family:"Inter",system-ui,sans-serif; color:#1a1a1a; }
+.vl-cc.is-visible { display:block; }
+.vl-cc__inner { max-width:1100px; margin:0 auto;
+  display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
+.vl-cc__text { flex:1 1 420px; font-size:14.5px; line-height:1.6; }
+.vl-cc__text strong { display:block; font-size:16px; margin-bottom:4px; }
+.vl-cc__text a { color:var(--cc-red); font-weight:700; text-decoration:underline; }
+.vl-cc__actions { display:flex; gap:10px; flex-wrap:wrap; }
+.vl-cc__btn { border:0; cursor:pointer; border-radius:50px;
+  padding:12px 22px; font:700 14px/1 "Inter",system-ui,sans-serif; }
+.vl-cc__btn--accept { background:var(--cc-red); color:#fff; }
+.vl-cc__btn--accept:hover { filter:brightness(1.08); }
+.vl-cc__btn--reject { background:#ececec; color:#222; }
+.vl-cc__btn--reject:hover { background:#e0e0e0; }
+@media (prefers-color-scheme: dark) {
+  .vl-cc { background:#1e1e1e; color:#f0f0f0; }
+  .vl-cc__btn--reject { background:#333; color:#f0f0f0; }
+}
+
+/* Placeholder al posto degli embed bloccati (es. mappa Google) */
+.vl-embed-block {
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:14px; text-align:center; min-height:260px; padding:28px;
+  background:#f4f4f4; color:#333; border-radius:10px;
+  font-family:"Inter",system-ui,sans-serif; }
+.vl-embed-block p { margin:0; font-size:15px; max-width:420px; line-height:1.5; }
+.vl-embed-block button { border:0; cursor:pointer; border-radius:50px;
+  padding:11px 20px; background:#da0612; color:#fff; font-weight:700; font-size:14px; }
+
+/* Barra link legali in fondo a ogni pagina */
+.vl-legal-links { background:#111; color:#bbb; text-align:center;
+  padding:14px 16px; font:500 13.5px/1.6 "Inter",system-ui,sans-serif; }
+.vl-legal-links a { color:#f9e813; text-decoration:none; margin:0 4px; cursor:pointer; }
+.vl-legal-links a:hover { text-decoration:underline; }
+.vl-legal-links .sep { color:#555; }
