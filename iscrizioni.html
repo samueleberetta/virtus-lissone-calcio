@@ -160,7 +160,11 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 /* Tabelle quote/materiale */
 .isc__tabtitle{color:var(--yellow);font-weight:800;text-align:center;
   font-size:clamp(18px,3.4vw,22px);margin:6px 0 14px;text-transform:uppercase;letter-spacing:.4px;}
-.isc-table-wrap{margin:0 0 34px;}
+.isc-table-wrap{margin:0 0 34px;overflow-x:auto;}
+.isc-table th.mat,.isc-table td.mat{text-align:center;white-space:nowrap;}
+.isc-table td.mat .ck{color:#5ee08a;}
+.isc-table td.mat .no{color:rgba(255,255,255,.3);font-weight:400;}
+.isc-table td.mat svg{vertical-align:middle;}
 .isc-table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.08);
   border-radius:12px;overflow:hidden;}
 .isc-table th,.isc-table td{padding:12px 14px;text-align:left;font-size:15.5px;
@@ -194,16 +198,16 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
     <h2 class="isc__tabtitle">Quote per categoria</h2>
     <div class="isc-table-wrap">
       <table class="isc-table">
-        <thead><tr><th>Categoria</th><th>Annate</th><th>Quota</th><th>Materiale incluso</th></tr></thead>
+        <thead><tr><th>Categoria</th><th>Annate</th><th>Quota</th><th class="mat">Kit allenamento</th><th class="mat">Tuta allenamento</th><th class="mat">Polo rappresentanza</th></tr></thead>
         <tbody>
-          <tr><td data-label="Categoria">Under 10</td><td data-label="Annate">2016 / 2017 / 2018</td><td class="q" data-label="Quota">150&euro;</td><td data-label="Materiale">Kit allenamento</td></tr>
-          <tr><td data-label="Categoria">Under 11</td><td data-label="Annate">2015</td><td class="q" data-label="Quota">160&euro;</td><td data-label="Materiale">Kit allenamento</td></tr>
-          <tr><td data-label="Categoria">Under 13</td><td data-label="Annate">2013 / 2014</td><td class="q" data-label="Quota">190&euro;</td><td data-label="Materiale">Kit + tuta allenamento, polo rappresentanza</td></tr>
-          <tr><td data-label="Categoria">Ragazzi</td><td data-label="Annate">2012</td><td class="q" data-label="Quota">190&euro;</td><td data-label="Materiale">Kit + tuta allenamento, polo rappresentanza</td></tr>
-          <tr><td data-label="Categoria">Under 15*</td><td data-label="Annate">2011</td><td class="q" data-label="Quota">240&euro;</td><td data-label="Materiale">Kit + tuta allenamento, polo rappresentanza</td></tr>
-          <tr><td data-label="Categoria">Under 17*</td><td data-label="Annate">2009 / 2010</td><td class="q" data-label="Quota">250&euro;</td><td data-label="Materiale">Kit + tuta allenamento, polo rappresentanza</td></tr>
-          <tr><td data-label="Categoria">Under 19*</td><td data-label="Annate">2007 / 2008</td><td class="q" data-label="Quota">270&euro;</td><td data-label="Materiale">Kit + tuta allenamento, polo rappresentanza</td></tr>
-          <tr><td data-label="Categoria">Open* <span style="font-weight:400">(1 allenamento a settimana)</span></td><td data-label="Annate">2006 e precedenti</td><td class="q" data-label="Quota">240&euro;</td><td data-label="Materiale">Kit + tuta allenamento, polo rappresentanza</td></tr>
+          <tr><td data-label="Categoria">Under 10</td><td data-label="Annate">2016 / 2017 / 2018</td><td class="q" data-label="Quota">150&euro;</td><td class="mat" data-label="Kit allenamento"><span class="ck" aria-label="incluso">&#10003;</span></td><td class="mat" data-label="Tuta allenamento"><span class="no" aria-label="non incluso">&ndash;</span></td><td class="mat" data-label="Polo rappresentanza"><span class="no" aria-label="non incluso">&ndash;</span></td></tr>
+          <tr><td data-label="Categoria">Under 11</td><td data-label="Annate">2015</td><td class="q" data-label="Quota">160&euro;</td><td class="mat" data-label="Kit allenamento"><span class="ck" aria-label="incluso">&#10003;</span></td><td class="mat" data-label="Tuta allenamento"><span class="no" aria-label="non incluso">&ndash;</span></td><td class="mat" data-label="Polo rappresentanza"><span class="no" aria-label="non incluso">&ndash;</span></td></tr>
+          <tr><td data-label="Categoria">Under 13</td><td data-label="Annate">2013 / 2014</td><td class="q" data-label="Quota">190&euro;</td><td class="mat" data-label="Kit allenamento"><span class="ck" aria-label="incluso">&#10003;</span></td><td class="mat" data-label="Tuta allenamento"><span class="ck" aria-label="incluso">&#10003;</span></td><td class="mat" data-label="Polo rappresentanza"><span class="ck" aria-label="incluso">&#10003;</span></td></tr>
+          <tr><td data-label="Categoria">Ragazzi</td><td data-label="Annate">2012</td><td class="q" data-label="Quota">190&euro;</td><td class="mat" data-label="Kit allenamento"><span class="ck" aria-label="incluso">&#10003;</span></td><td class="mat" data-label="Tuta allenamento"><span class="ck" aria-label="incluso">&#10003;</span></td><td class="mat" data-label="Polo rappresentanza"><span class="ck" aria-label="incluso">&#10003;</span></td></tr>
+          <tr><td data-label="Categoria">Under 15*</td><td data-label="Annate">2011</td><td class="q" data-label="Quota">240&euro;</td><td class="mat" data-label="Kit allenamento"><span class="ck" aria-label="incluso">&#10003;</span></td><td class="mat" data-label="Tuta allenamento"><span class="ck" aria-label="incluso">&#10003;</span></td><td class="mat" data-label="Polo rappresentanza"><span class="ck" aria-label="incluso">&#10003;</span></td></tr>
+          <tr><td data-label="Categoria">Under 17*</td><td data-label="Annate">2009 / 2010</td><td class="q" data-label="Quota">250&euro;</td><td class="mat" data-label="Kit allenamento"><span class="ck" aria-label="incluso">&#10003;</span></td><td class="mat" data-label="Tuta allenamento"><span class="ck" aria-label="incluso">&#10003;</span></td><td class="mat" data-label="Polo rappresentanza"><span class="ck" aria-label="incluso">&#10003;</span></td></tr>
+          <tr><td data-label="Categoria">Under 19*</td><td data-label="Annate">2007 / 2008</td><td class="q" data-label="Quota">270&euro;</td><td class="mat" data-label="Kit allenamento"><span class="ck" aria-label="incluso">&#10003;</span></td><td class="mat" data-label="Tuta allenamento"><span class="ck" aria-label="incluso">&#10003;</span></td><td class="mat" data-label="Polo rappresentanza"><span class="ck" aria-label="incluso">&#10003;</span></td></tr>
+          <tr><td data-label="Categoria">Open* <span style="font-weight:400">(1 allenamento a settimana)</span></td><td data-label="Annate">2006 e precedenti</td><td class="q" data-label="Quota">240&euro;</td><td class="mat" data-label="Kit allenamento"><span class="ck" aria-label="incluso">&#10003;</span></td><td class="mat" data-label="Tuta allenamento"><span class="ck" aria-label="incluso">&#10003;</span></td><td class="mat" data-label="Polo rappresentanza"><span class="ck" aria-label="incluso">&#10003;</span></td></tr>
         </tbody>
       </table>
       <p class="isc__legend">* campionati con arbitraggio ufficiale</p>
