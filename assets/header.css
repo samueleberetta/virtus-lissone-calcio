@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Header responsive custom — Virtus Lissone
+   Sostituisce l'header Elementor (non responsive) con una barra pulita.
+   ========================================================================== */
+:root {
+  --vl-red: #da0612;
+  --vl-gray: #6f6f6f;
+  --vl-dark: #141414;
+}
+
+.vl-header {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 14px clamp(12px, 3vw, 32px);
+}
+.vl-header__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 60px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .16);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 22px;
+  position: relative;
+}
+
+/* Logo */
+.vl-logo { display: inline-flex; align-items: center; flex-shrink: 0; }
+.vl-logo img { height: 72px; width: auto; display: block; }
+
+/* Navigazione principale */
+.vl-nav { display: flex; align-items: center; gap: 30px; margin: 0 auto; }
+.vl-nav__link {
+  color: var(--vl-gray);
+  text-decoration: none;
+  font: 600 16px/1 "Inter", system-ui, sans-serif;
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+  transition: color .18s ease, border-color .18s ease;
+  white-space: nowrap;
+}
+.vl-nav__link:hover { color: var(--vl-red); }
+.vl-nav__link.is-active { color: var(--vl-dark); border-bottom-color: var(--vl-red); }
+
+/* Azioni a destra: social + CTA */
+.vl-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.vl-social {
+  width: 36px; height: 36px; border-radius: 9px;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: #fff; text-decoration: none; transition: transform .15s ease, filter .15s ease;
+}
+.vl-social:hover { transform: translateY(-2px); filter: brightness(1.05); }
+.vl-social--fb { background: #1877f2; }
+.vl-social--ig { background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+.vl-social svg { width: 19px; height: 19px; fill: currentColor; }
+.vl-cta {
+  background: var(--vl-red); color: #fff;
+  padding: 13px 24px; border-radius: 50px;
+  font: 700 15px/1 "Inter", system-ui, sans-serif;
+  text-decoration: none; white-space: nowrap;
+  transition: filter .15s ease, transform .15s ease;
+}
+.vl-cta:hover { filter: brightness(1.08); transform: translateY(-1px); }
+
+/* Hamburger (nascosto su desktop) — override esplicito degli stili Elementor sui button */
+.vl-header .vl-burger {
+  display: none;
+  margin-left: auto;
+  width: 46px; height: 46px;
+  padding: 0; border: 0; outline: 0; box-shadow: none;
+  background: transparent !important; cursor: pointer;
+  flex-direction: column; justify-content: center; align-items: center; gap: 6px;
+  border-radius: 10px;
+}
+.vl-header .vl-burger span {
+  display: block; width: 26px; height: 3px; border-radius: 3px;
+  background: var(--vl-dark); transition: transform .25s ease, opacity .2s ease;
+}
+
+/* Nasconde eventuali menu Elementor residui (widget "nested menu" fuori dall'header) */
+.e-n-menu, .elementor-menu-toggle { display: none !important; }
+
+/* ------------------------- Mobile / tablet ------------------------- */
+@media (max-width: 1024px) {
+  .vl-logo img { height: 54px; }
+  .vl-header .vl-burger { display: flex; }
+
+  .vl-nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px); left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 4px; margin: 0;
+    background: #fff; border-radius: 22px; padding: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+  }
+  .vl-header__inner.is-open .vl-nav { display: flex; }
+  .vl-nav__link {
+    padding: 13px 16px; border-bottom: 0; border-radius: 12px; font-size: 17px;
+  }
+  .vl-nav__link:hover { background: #f6f6f6; }
+  .vl-nav__link.is-active { background: #fdecec; color: var(--vl-red); }
+
+  .vl-actions {
+    margin: 8px 6px 2px; justify-content: center;
+    border-top: 1px solid #eee; padding-top: 14px;
+  }
+
+  /* Hamburger -> X quando aperto */
+  .vl-header__inner.is-open .vl-burger span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+  .vl-header__inner.is-open .vl-burger span:nth-child(2) { opacity: 0; }
+  .vl-header__inner.is-open .vl-burger span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+}
+
+@media (max-width: 380px) {
+  .vl-header { padding: 10px; }
+  .vl-header__inner { padding: 8px 14px; }
+  .vl-logo img { height: 46px; }
+}
