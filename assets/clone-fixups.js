@@ -70,7 +70,38 @@
     document.body.removeChild(ta);
   }
 
-  function init() { setTimeout(fillCounters, 1500); freeContactForm(); initHeader(); initCopyButtons(); }
+  // Carosello hero della home (rimpiazza lo slideshow Elementor che non si avvia nell'export statico).
+  var HERO_IMAGES = [
+    'assets/c77e5b_3bb24db4-8d19-4bb4-a856-f653ef26c89d.jpeg',
+    'assets/e15703_449850d8-83b8-4c48-9738-5793e1b5fe6b.jpeg',
+    'assets/1103ab_bc99316f-66d9-4adb-b56f-cfd446c34ac0.jpeg'
+  ];
+  function initHeroSlideshow() {
+    var hero = document.querySelector('.elementor-element-49b8b301');
+    if (!hero || hero.querySelector('.vl-hero-slides')) return;
+    var wrap = document.createElement('div');
+    wrap.className = 'vl-hero-slides';
+    var slides = HERO_IMAGES.map(function (src, i) {
+      var s = document.createElement('div');
+      s.className = 'vl-hero-slide' + (i === 0 ? ' is-active' : '');
+      s.style.backgroundImage = 'url("' + src + '")';
+      wrap.appendChild(s);
+      return s;
+    });
+    var overlay = document.createElement('div');
+    overlay.className = 'vl-hero-overlay';
+    wrap.appendChild(overlay);
+    hero.insertBefore(wrap, hero.firstChild);
+    if (slides.length < 2) return;
+    var idx = 0;
+    setInterval(function () {
+      slides[idx].classList.remove('is-active');
+      idx = (idx + 1) % slides.length;
+      slides[idx].classList.add('is-active');
+    }, 5000);
+  }
+
+  function init() { setTimeout(fillCounters, 1500); freeContactForm(); initHeader(); initCopyButtons(); initHeroSlideshow(); }
   if (document.readyState !== 'loading') init();
   else document.addEventListener('DOMContentLoaded', init);
 })();

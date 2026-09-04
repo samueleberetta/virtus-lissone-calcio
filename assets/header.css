@@ -135,3 +135,21 @@
   .vl-header__inner { padding: 8px 14px; }
   .vl-logo img { height: 46px; }
 }
+
+/* ===== Carosello hero home (sostituisce lo slideshow Elementor non funzionante) ===== */
+.elementor-element-49b8b301 { position: relative; }
+.elementor-element-49b8b301::before { background: none !important; }
+.vl-hero-slides { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.vl-hero-slide {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  opacity: 0; transition: opacity 1.4s ease-in-out;
+  transform: scale(1.02); will-change: opacity, transform;
+}
+.vl-hero-slide.is-active { opacity: 1; animation: vlKenBurns 6s ease-out forwards; }
+@keyframes vlKenBurns { from { transform: scale(1.02); } to { transform: scale(1.10); } }
+.vl-hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(0,0,0,.30) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.60) 100%);
+}
+.elementor-element-49b8b301 > .e-con-inner { position: relative; z-index: 2; }
