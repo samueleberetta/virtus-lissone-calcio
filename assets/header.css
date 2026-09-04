@@ -32,7 +32,7 @@
 .vl-logo img { height: 72px; width: auto; display: block; }
 
 /* Navigazione principale */
-.vl-nav { display: flex; align-items: center; gap: 30px; margin: 0 auto; }
+.vl-nav { display: flex; align-items: center; gap: 30px; flex: 1 1 auto; margin: 0 0 0 40px; }
 .vl-nav__link {
   color: var(--vl-gray);
   text-decoration: none;
@@ -45,8 +45,8 @@
 .vl-nav__link:hover { color: var(--vl-red); }
 .vl-nav__link.is-active { color: var(--vl-dark); border-bottom-color: var(--vl-red); }
 
-/* Azioni a destra: social + CTA */
-.vl-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+/* Azioni a destra: social + CTA — spinte al bordo destro dell'header */
+.vl-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; margin-left: auto; }
 .vl-social {
   width: 36px; height: 36px; border-radius: 9px;
   display: inline-flex; align-items: center; justify-content: center;
